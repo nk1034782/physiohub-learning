@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhysioHub | Physiotherapy Learning Hub</title>
+<meta name="description" content="PhysioHub - a complete physiotherapy learning platform for BPT and MPT students, entrance preparation, question papers, notes, quizzes and research.">
+<style>
+:root{--navy:#08324d;--teal:#0b8f8c;--cyan:#dff7f5;--bg:#f5f8fa;--card:#fff;--text:#17212b;--muted:#667784;--line:#dbe5ea;--gold:#f3b64b;--shadow:0 12px 32px rgba(8,50,77,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}a{text-decoration:none;color:inherit}.wrap{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:26px;font-weight:900;color:var(--navy)}.brand span{color:var(--teal)}.links{display:flex;gap:20px;align-items:center}.links a{font-size:14px;font-weight:700;color:var(--navy)}.links a:hover{color:var(--teal)}.menu{display:none;font-size:28px}
+.hero{background:linear-gradient(135deg,var(--navy),#0b6670);color:#fff;padding:82px 0}.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:50px;align-items:center}.badge{display:inline-block;background:rgba(255,255,255,.14);padding:7px 13px;border-radius:99px;font-size:12px;font-weight:800;letter-spacing:.08em}.hero h1{font-size:clamp(42px,6vw,72px);line-height:1.02;margin:16px 0}.hero h1 span{color:#91ebe4}.hero p{font-size:18px;color:#e6f8f8;max-width:720px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;padding:12px 19px;border-radius:999px;font-weight:800;border:1px solid transparent}.primary{background:#fff;color:var(--navy)}.secondary{border-color:#fff;color:#fff}.hero-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:26px;padding:35px;text-align:center}.hero-card .big{font-size:74px}
+section{padding:72px 0}.section-head{text-align:center;max-width:760px;margin:0 auto 40px}.eyebrow{color:var(--teal);font-size:12px;font-weight:900;letter-spacing:.13em}.section-head h2{font-size:36px;color:var(--navy);margin:8px 0}.section-head p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow);transition:.2s}.card:hover{transform:translateY(-4px)}.icon{font-size:40px}.card h3{margin:10px 0 7px;color:var(--navy)}.card p{color:var(--muted);margin:0 0 16px}.link{color:var(--teal);font-weight:800}
+.searchbox{max-width:720px;margin:0 auto 30px}.searchbox input{width:100%;padding:16px 20px;border:2px solid var(--line);border-radius:999px;font-size:16px;outline:none}.searchbox input:focus{border-color:var(--teal)}
+.subjects{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.subject{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}.subject strong{color:var(--navy)}.subject small{display:block;color:var(--muted);margin-top:5px}
+.year-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.year{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}.year h3{margin:0 0 8px;color:var(--navy)}
+.papers{background:#fff}.paper-layout{display:grid;grid-template-columns:1fr 1fr;gap:22px}.paper-box{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:25px}.paper-box h3{color:var(--navy)}.paper-box ul{padding-left:20px}.paper-box li{margin:8px 0}.paper-box a{color:var(--teal);font-weight:800}
+.feature{background:var(--navy);color:#fff}.feature h2{font-size:35px}.feature p{color:#d7e7ed}.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}.checks{list-style:none;padding:0}.checks li{margin:10px 0}
+.quiz{background:linear-gradient(135deg,#e7faf8,#f8fcfd)}.quiz-box{max-width:800px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow)}.option{display:block;width:100%;text-align:left;margin:9px 0;padding:12px 15px;border:1px solid var(--line);background:#fff;border-radius:12px;cursor:pointer}.option:hover{border-color:var(--teal)}#quizResult{font-weight:800;margin-top:15px}
+.about{display:grid;grid-template-columns:.7fr 1.3fr;gap:35px;align-items:center}.profile{background:#fff;border:1px solid var(--line);border-radius:24px;padding:32px;text-align:center;box-shadow:var(--shadow)}.profile .person{font-size:70px}.about h2{color:var(--navy);font-size:34px}
+footer{background:#061e30;color:#fff;padding:42px 0 22px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}.footer-grid p,.footer-grid a{color:#b8cbd4}.copy{border-top:1px solid rgba(255,255,255,.15);margin-top:28px;padding-top:18px;text-align:center;color:#9eb2bc}
+@media(max-width:850px){.links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:18px;flex-direction:column;border-bottom:1px solid var(--line)}.links.open{display:flex}.menu{display:block}.hero-grid,.feature-grid,.about,.paper-layout{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.subjects{grid-template-columns:1fr 1fr}.year-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.grid,.subjects,.year-grid{grid-template-columns:1fr}.hero{padding:60px 0}.hero h1{font-size:46px}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap nav">
+<a class="brand" href="#home">Physio<span>Hub</span></a>
+<div class="menu" onclick="document.getElementById('links').classList.toggle('open')">☰</div>
+<nav class="links" id="links">
+<a href="#home">Home</a><a href="#courses">Courses</a><a href="#subjects">Subjects</a><a href="#papers">Question Papers</a><a href="#entrance">Entrance</a><a href="#quiz">Quiz</a><a href="#research">Research</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="wrap hero-grid">
+<div>
+<span class="badge">PHYSIOTHERAPY LEARNING PLATFORM</span>
+<h1>Learn Physiotherapy with <span>PhysioHub</span></h1>
+<p>A student-focused learning website for BPT and MPT subjects, exam preparation, previous-year papers, MCQs, practical skills and research.</p>
+<div class="actions"><a class="btn primary" href="#courses">Start Learning</a><a class="btn secondary" href="#quiz">Try a Quiz</a></div>
+</div>
+<div class="hero-card"><div class="big">🩺</div><h2>PHYSIOHUB</h2><p>Learn • Practice • Test • Research</p></div>
+</div>
+</section>
+
+<section id="courses">
+<div class="wrap">
+<div class="section-head"><span class="eyebrow">COURSES</span><h2>Choose Your Learning Path</h2><p>Organized resources for undergraduate and postgraduate physiotherapy learners.</p></div>
+<div class="grid">
+<div class="card"><div class="icon">📚</div><h3>BPT Learning</h3><p>Year-wise subjects, concepts, examination notes and revision resources.</p><a class="link" href="#bpt">Explore BPT →</a></div>
+<div class="card"><div class="icon">🎓</div><h3>MPT Learning</h3><p>Common subjects and speciality-based postgraduate learning.</p><a class="link" href="#mpt">Explore MPT →</a></div>
+<div class="card"><div class="icon">🧠</div><h3>MPT Entrance</h3><p>MCQs, anatomy, exercise therapy, neuro, cardio-respiratory and revision.</p><a class="link" href="#entrance">Prepare →</a></div>
+<div class="card"><div class="icon">📝</div><h3>Question Papers</h3><p>Access official TNMGRMU question-bank resources and organize your revision.</p><a class="link" href="#papers">View →</a></div>
+<div class="card"><div class="icon">🧪</div><h3>Practical Learning</h3><p>Assessment, special tests, exercise techniques, clinical reasoning and practical viva.</p><a class="link" href="#practical">Learn →</a></div>
+<div class="card"><div class="icon">🔬</div><h3>Research Hub</h3><p>Research methods, project writing, statistics and manuscript preparation.</p><a class="link" href="#research">Research →</a></div>
+</div>
+</div>
+</section>
+
+<section id="bpt">
+<div class="wrap">
+<div class="section-head"><span class="eyebrow">BACHELOR OF PHYSIOTHERAPY</span><h2>BPT Year-wise Learning</h2><p>Build your foundation year by year.</p></div>
+<div class="year-grid">
+<div class="year"><h3>1st Year</h3><p>Anatomy, Physiology, Psychology & Sociology, Physics.</p></div>
+<div class="year"><h3>2nd Year</h3><p>Exercise Therapy, Biomechanics, Medicine, Surgery, Pathology & Microbiology.</p></div>
+<div class="year"><h3>3rd Year</h3><p>Electrotherapy, Orthopaedics, Neurology, Cardio-Respiratory & Community Medicine.</p></div>
+<div class="year"><h3>4th Year</h3><p>Physiotherapy in Orthopaedics, Neurology, Cardio-Respiratory & Rehabilitation.</p></div>
+</div>
+</div>
+</section>
+
+<section id="mpt" class="papers">
+<div class="wrap">
+<div class="section-head"><span class="eyebrow">MASTER OF PHYSIOTHERAPY</span><h2>MPT Specialities</h2><p>Explore postgraduate speciality learning.</p></div>
+<div class="grid">
+<div class="card"><div class="icon">🦴</div><h3>Orthopaedics</h3><p>Assessment, manual therapy, exercise therapy and rehabilitation.</p></div>
+<div class="card"><div class="icon">🧠</div><h3>Neurology</h3><p>Neuro assessment, motor recovery and neurological rehabilitation.</p></div>
+<div class="card"><div class="icon">❤️</div><h3>Cardio-Respiratory</h3><p>Cardiac, pulmonary, ICU and critical-care physiotherapy.</p></div>
+<div class="card"><div class="icon">👶</div><h3>Paediatrics</h3><p>Development, paediatric assessment and intervention.</p></div>
+<div class="card"><div class="icon">🏃</div><h3>Sports</h3><p>Sports injury prevention, assessment and rehabilitation.</p></div>
+<div class="card"><div class="icon">🤰</div><h3>OBG</h3><p>Physiotherapy in obstetrics and gynaecology.</p></div>
+</div>
+</div>
+</section>
+
+<section id="subjects">
+<div class="wrap">
+<div class="section-head"><span>LEARNING LIBRARY</span><h2>Find a Subject</h2><p>Search the learning library. More detailed lessons can be added subject by subject.</p></div>
+<div class="searchbox"><input id="subjectSearch" type="search" placeholder="🔎 Search Anatomy, PNF, Stroke, Exercise Therapy..."></div>
+<div class="subjects" id="subjectList">
+<div class="subject"><strong>Anatomy</strong><small>Upper limb • Lower limb • Neuroanatomy</small></div>
+<div class="subject"><strong>Physiology</strong><small>Systems • Exercise physiology</small></div>
+<div class="subject"><strong>Exercise Therapy</strong><small>ROM • Strengthening • Stretching • Mobility</small></div>
+<div class="subject"><strong>Electrotherapy</strong><small>Current • Ultrasound • SWD • TENS</small></div>
+<div class="subject"><strong>Biomechanics</strong><small>Movement • Gait • Kinetics</small></div>
+<div class="subject"><strong>Orthopaedics</strong><small>OA • Fractures • TKR • THR</small></div>
+<div class="subject"><strong>Neurology</strong><small>Stroke • SCI • CP • Parkinsonism</small></div>
+<div class="subject"><strong>Cardio-Respiratory</strong><small>COPD • ICU • Chest physiotherapy</small></div>
+<div class="subject"><strong>Paediatrics</strong><small>Milestones • Reflexes • CP</small></div>
+<div class="subject"><strong>PNF</strong><small>Patterns • Techniques • Applications</small></div>
+<div class="subject"><strong>Research</strong><small>Methods • Statistics • Manuscript</small></div>
+<div class="subject"><strong>Clinical Assessment</strong><small>Tests • Measures • Documentation</small></div>
+</div>
+</div>
+</section>
+
+<section id="papers" class="papers">
+<div class="wrap">
+<div class="section-head"><span>EXAM PREPARATION</span><h2>Previous Year Question Papers</h2><p>Official TNMGRMU question-bank resources for BPT and MPT.</p></div>
+<div class="paper-layout">
+<div class="paper-box"><h3>📚 BPT</h3><ul>
+<li><a target="_blank" href="https://www.tnmgrmu.ac.in/examination/question-bank/allied-health-sciences-e-questions/allied-health-science-ug-courses-4/">BPT 1st Year →</a></li>
+<li><a target="_blank" href="https://www.tnmgrmu.ac.in/examination/question-bank/allied-health-sciences-e-questions/allied-health-science-ug-courses-4/">BPT 2nd Year →</a></li>
+<li><a target="_blank" href="https://www.tnmgrmu.ac.in/examination/question-bank/allied-health-sciences-e-questions/allied-health-science-ug-courses-4/">BPT 3rd Year →</a></li>
+<li><a target="_blank" href="https://www.tnmgrmu.ac.in/examination/question-bank/allied-health-sciences-e-questions/allied-health-science-ug-courses-4/">BPT 4th Year →</a></li>
+</ul></div>
+<div class="paper-box"><h3>🎓 MPT</h3><ul>
+<li><a target="_blank" href="https://www.tnmgrmu.ac.in/examination/question-bank/allied-health-sciences-e-questions/pg-course-m-p-t/">MPT 1st Year →</a></li>
+<li><a target="_blank" href="https://www.tnmgrmu.ac.in/examination/question-bank/allied-health-sciences-e-questions/pg-course-m-p-t/">Orthopaedics →</a></li>
+<li><a target="_blank" href="https://www.tnmgrmu.ac.in/examination/question-bank/allied-health-sciences-e-questions/pg-course-m-p-t/">Neurology →</a></li>
+<li><a target="_blank" href="https://www.tnmgrmu.ac.in/examination/question-bank/allied-health-sciences-e-questions/pg-course-m-p-t/">Cardio-Respiratory / Paediatrics / Sports / OBG →</a></li>
+</ul></div>
+</div>
+</div>
+</section>
+
+<section id="entrance" class="feature">
+<div class="wrap feature-grid">
+<div><span class="eyebrow" style="color:#91ebe4">MPT ENTRANCE</span><h2>Prepare Smarter</h2><p>Use topic-wise revision, MCQs and clinical concepts for entrance preparation.</p></div>
+<ul class="checks"><li>✓ Anatomy & Neuroanatomy</li><li>✓ Exercise Therapy</li><li>✓ Electrotherapy</li><li>✓ Orthopaedics</li><li>✓ Neurology</li><li>✓ Cardio-Respiratory</li><li>✓ Paediatrics</li><li>✓ PNF & Rehabilitation</li></ul>
+</div>
+</section>
+
+<section id="practical">
+<div class="wrap">
+<div class="section-head"><span>CLINICAL SKILLS</span><h2>Practical Learning</h2><p>Build the clinical knowledge needed for practical examinations and patient care.</p></div>
+<div class="grid">
+<div class="card"><div class="icon">🩺</div><h3>Assessment</h3><p>History taking, observation, palpation, ROM, MMT and functional assessment.</p></div>
+<div class="card"><div class="icon">📏</div><h3>Special Tests</h3><p>Learn indications, positions, procedures and interpretation of common tests.</p></div>
+<div class="card"><div class="icon">🏋️</div><h3>Exercise Prescription</h3><p>Understand dosage, progression, precautions and clinical application.</p></div>
+</div>
+</div>
+</section>
+
+<section id="quiz" class="quiz">
+<div class="wrap">
+<div class="section-head"><span>QUICK TEST</span><h2>Physiotherapy MCQ</h2><p>Try a sample question.</p></div>
+<div class="quiz-box">
+<h3>Which PNF pattern is associated with shoulder flexion, abduction and external rotation?</h3>
+<button class="option" onclick="answer(false)">A. D1 Extension</button>
+<button class="option" onclick="answer(true)">B. D2 Flexion</button>
+<button class="option" onclick="answer(false)">C. D2 Extension</button>
+<button class="option" onclick="answer(false)">D. D1 Flexion</button>
+<div id="quizResult"></div>
+</div>
+</div>
+</section>
+
+<section id="research">
+<div class="wrap">
+<div class="section-head"><span>RESEARCH HUB</span><h2>Research & Publication</h2><p>Learn the basics of physiotherapy research and academic writing.</p></div>
+<div class="grid">
+<div class="card"><div class="icon">🔬</div><h3>Research Methods</h3><p>Study design, sampling, variables, reliability and validity.</p></div>
+<div class="card"><div class="icon">📊</div><h3>Statistics</h3><p>Understand descriptive statistics, hypothesis testing and interpretation.</p></div>
+<div class="card"><div class="icon">📄</div><h3>Manuscript Writing</h3><p>Title, abstract, introduction, methods, results, discussion and references.</p></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap about">
+<div class="profile"><div class="person">👨‍⚕️</div><h3>Nantha Kumar, BPT</h3><p>Physiotherapist / Researcher</p></div>
+<div><span class="eyebrow">ABOUT PHYSIOHUB</span><h2>One place for physiotherapy learning</h2><p>PhysioHub is designed as a growing educational platform for physiotherapy students and learners. The goal is to organize subjects, clinical concepts, examination preparation, question papers, quizzes and research resources in a simple mobile-friendly website.</p><p><strong>Founder / Researcher:</strong> Nantha Kumar, BPT</p></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap footer-grid">
+<div><h3>PhysioHub</h3><p>Physiotherapy Learning • Practice • Test • Research</p></div>
+<div><h3>Learning</h3><p><a href="#bpt">BPT</a></p><p><a href="#mpt">MPT</a></p><p><a href="#subjects">Subjects</a></p></div>
+<div><h3>Exams</h3><p><a href="#papers">Question Papers</a></p><p><a href="#entrance">MPT Entrance</a></p><p><a href="#quiz">MCQ Quiz</a></p></div>
+</div>
+<div class="wrap copy">© 2026 PhysioHub. Educational platform.</div>
+</footer>
+
+<script>
+const input=document.getElementById('subjectSearch');
+const items=[...document.querySelectorAll('.subject')];
+input.addEventListener('input',()=>{
+ const q=input.value.toLowerCase().trim();
+ items.forEach(item=>item.style.display=item.innerText.toLowerCase().includes(q)?'block':'none');
+});
+function answer(correct){
+ const r=document.getElementById('quizResult');
+ r.textContent=correct?'✅ Correct! D2 Flexion is shoulder flexion, abduction and external rotation.':'❌ Try again. Remember: D2 Flexion = shoulder flexion + abduction + external rotation.';
+ r.style.color=correct?'#087f5b':'#b42318';
+}
+</script>
+</body>
+</html>
